@@ -5,6 +5,22 @@ local map = vim.keymap.set
 -- Save (Ctrl+S) in every mode
 map({ "n", "i", "v" }, "<C-s>", "<Cmd>silent! wall<CR><Esc>", { desc = "Save all" })
 
+-- Copy / cut / paste like VS Code, through the system clipboard ('clipboard' is unnamedplus).
+-- Without a selection, copy and cut take the whole line. Ctrl+C in the terminal panel is
+-- left alone so it still stops a running program.
+map("v", "<C-c>", "y", { desc = "Copy" })
+map("v", "<C-x>", "d", { desc = "Cut" })
+map("v", "<C-v>", '"_dP', { desc = "Paste over selection" })
+map("n", "<C-c>", "yy", { desc = "Copy line" })
+map("n", "<C-x>", "dd", { desc = "Cut line" })
+map("n", "<C-v>", "P", { desc = "Paste" })
+map("i", "<C-c>", "<C-o>yy", { desc = "Copy line" })
+map("i", "<C-x>", "<C-o>dd", { desc = "Cut line" })
+map("i", "<C-v>", "<C-r><C-o>+", { desc = "Paste" })
+map("c", "<C-v>", "<C-r>+", { desc = "Paste" })
+-- Vim's block (column) selection moves from Ctrl+V to Alt+V
+map("n", "<A-v>", "<C-v>", { desc = "Block (column) selection" })
+
 -- Undo like VS Code. Ctrl+Z would otherwise suspend Neovim, which freezes a foot window.
 map("n", "<C-z>", "u", { desc = "Undo" })
 map("i", "<C-z>", "<C-o>u", { desc = "Undo" })

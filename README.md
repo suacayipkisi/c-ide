@@ -112,6 +112,8 @@ Here `Space` is the leader key: press it and wait, and a menu lists every comman
 | Key                  | Action                                  |
 |----------------------|-----------------------------------------|
 | Ctrl+S               | Save all (auto save is also on)         |
+| Ctrl+C / Ctrl+X      | Copy / cut selection (no selection: line)|
+| Ctrl+V               | Paste (system clipboard)                |
 | Ctrl+P               | Go to file                              |
 | Ctrl+Shift+F         | Search in all files  (also Space f g)   |
 | Ctrl+F               | Find in current file (also /)           |
@@ -192,6 +194,7 @@ into `./build/<name>`. A Makefile `run:` target is used if it exists.
 | ciw / ci( / ci"  | Change word / inside parens / inside quotes  |
 | u / Ctrl+R       | Undo / redo                                  |
 | v / V            | Select characters / lines                    |
+| Alt+V            | Block (column) selection                     |
 | .                | Repeat last change                           |
 | * / n / N        | Search word under cursor / next / previous   |
 
