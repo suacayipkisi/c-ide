@@ -5,9 +5,11 @@ local map = vim.keymap.set
 -- Save (Ctrl+S) in every mode
 map({ "n", "i", "v" }, "<C-s>", "<Cmd>silent! wall<CR><Esc>", { desc = "Save all" })
 
--- Undo / redo like VS Code (Ctrl+Z would otherwise suspend Neovim)
+-- Undo like VS Code. Ctrl+Z would otherwise suspend Neovim, which freezes a foot window.
 map("n", "<C-z>", "u", { desc = "Undo" })
 map("i", "<C-z>", "<C-o>u", { desc = "Undo" })
+map("v", "<C-z>", "<Esc>u", { desc = "Undo" })
+map("o", "<C-z>", "<Esc>", { desc = "Cancel" })
 
 -- Clear search highlight
 map("n", "<Esc>", "<Cmd>nohlsearch<CR>")
@@ -58,7 +60,14 @@ map("n", "<leader>q", function()
   vim.cmd("bprevious")
   vim.cmd("bdelete " .. buf)
 end, { desc = "Close tab" })
-map("n", "<leader>Q", "<Cmd>qa<CR>", { desc = "Quit IDE" })
+local function quit_ide()
+  if vim.fn.confirm("Quit C IDE?", "&Yes\n&No", 2) == 1 then
+    vim.cmd("silent! wall")
+    vim.cmd("qa")
+  end
+end
+map("n", "<leader>Q", quit_ide, { desc = "Quit IDE (asks first)" })
+map({ "n", "i", "v" }, "<C-q>", quit_ide, { desc = "Quit IDE (asks first)" })
 
 -- Diagnostics (F8 / Shift+F8 like VS Code)
 map("n", "<F8>", function() vim.diagnostic.jump({ count = 1, float = true }) end, { desc = "Next problem" })

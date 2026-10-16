@@ -20,6 +20,7 @@
 | Shift+L / Shift+H    | Next / previous tab (Ctrl+PgDn/PgUp)    |
 | Space 1..5           | Go to tab N                             |
 | Space q              | Close tab                               |
+| Ctrl+Q / Space Q     | Quit the IDE (asks first)               |
 
 ## Code (clangd)
 | Key            | Action                                   |
@@ -97,6 +98,10 @@ into `./build/<name>`. A Makefile `run:` target is used if it exists.
 ## Explorer (when focused)
 `a` new file (end with / for a folder), `d` delete, `r` rename, `c`/`m` copy/move,
 `l`/Enter open, `h` close folder, `H` hidden files, `?` help.
+
+`:q`, `ZZ` or `Ctrl+W q` on the last file closes the file, not the IDE.
+If the IDE ever closes unexpectedly, the last keys pressed are in
+`~/.local/state/nvim/cide-last-keys.log`.
 
 Press **Space** and wait to see every leader shortcut. `Space ?` lists all keys.
 New to Vim? Run `:Tutor` once (≈30 min) — it pays off fast.

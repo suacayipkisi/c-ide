@@ -69,7 +69,8 @@ return {
       { "<leader>ge", "<Cmd>Neotree float git_status<CR>", desc = "Git changed files" },
     },
     opts = {
-      close_if_last_window = true,
+      -- Closing the last file must not quit the IDE (see the WinClosed autocmd)
+      close_if_last_window = false,
       popup_border_style = "rounded",
       enable_git_status = true,
       enable_diagnostics = true,

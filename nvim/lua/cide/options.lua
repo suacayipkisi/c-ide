@@ -34,6 +34,9 @@ o.scrolloff = 8
 o.sidescrolloff = 8
 o.updatetime = 250
 o.timeoutlen = 400
+-- Terminals send Alt+key as Esc followed by key. A short wait keeps a quick "Esc, h"
+-- from being read as Alt+h (window jump) in terminals without the kitty keyboard protocol.
+o.ttimeoutlen = 10
 o.undofile = true
 o.swapfile = false
 o.confirm = true
