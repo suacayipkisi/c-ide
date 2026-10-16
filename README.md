@@ -98,3 +98,7 @@ to debug and suggests the newest one.
 - When debugging, a program that reads from stdin (`scanf`) cannot take input from the debugger UI.
   Use F5 for interactive programs.
 - GNOME terminals use F11 for fullscreen. Use `Space d i` to step into instead.
+
+## License
+
+[MIT](LICENSE)
