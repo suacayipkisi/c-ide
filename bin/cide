@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# C IDE launcher.
+#   cide [path]      open in the current terminal
+#   cide -w [path]   open in a dedicated window (foot, Dark Modern colors, Nerd Font)
+set -euo pipefail
+
+ROOT="$(dirname "$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")")"
+
+if [[ "${1:-}" == "-w" ]]; then
+  shift
+  target="${1:-$PWD}"
+  dir="$target"
+  [[ -f "$target" ]] && dir="$(dirname "$target")"
+  exec setsid -f foot -c "$ROOT/foot/foot.ini" -D "$dir" nvim "$target" >/dev/null 2>&1
+fi
+
+exec nvim "${1:-.}"

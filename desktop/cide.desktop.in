@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=C IDE
+Comment=Keyboard-first C IDE (Neovim, VS Code Dark Modern)
+Exec=@BIN@ -w
+Icon=utilities-terminal
+Terminal=false
+Categories=Development;IDE;
+StartupWMClass=cide
