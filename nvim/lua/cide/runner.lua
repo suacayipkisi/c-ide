@@ -67,10 +67,10 @@ local function shell_cmd(p, run)
     end
     return cmd
   elseif p.kind == "make" then
-    local cmd = "make -C " .. esc(p.root)
+    local cmd = "make --no-print-directory -C " .. esc(p.root)
     if run then
       cmd = cmd .. string.format(
-        [[ && if make -C %s -n run >/dev/null 2>&1; then make -s -C %s run; else echo "Build OK (no 'run' target in Makefile)"; fi]],
+        [[ && if make -C %s -n run >/dev/null 2>&1; then make -s --no-print-directory -C %s run; else echo "Build OK (no 'run' target in Makefile)"; fi]],
         esc(p.root), esc(p.root))
     end
     return cmd
@@ -106,7 +106,7 @@ function M.build_for_debug()
   elseif p.kind == "cmake" then
     cmd = cmake_build_cmd(p)
   else
-    cmd = "make -C " .. esc(p.root)
+    cmd = "make --no-print-directory -C " .. esc(p.root)
   end
 
   local output = vim.fn.system(cmd .. " 2>&1")
