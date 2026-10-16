@@ -108,6 +108,26 @@ to debug and suggests the newest one.
 This is the same cheat sheet that opens inside the editor with `Space h`.
 Here `Space` is the leader key: press it and wait, and a menu lists every command.
 
+### Start here: everyday keys
+Learn these first. Everything else below is reference.
+
+| Key                      | Action                                         |
+|--------------------------|------------------------------------------------|
+| i / Esc                  | Start typing / stop typing (back to commands)  |
+| Ctrl+S                   | Save (auto save is also on)                    |
+| Ctrl+C / Ctrl+X / Ctrl+V | Copy / cut / paste                             |
+| Ctrl+Z                   | Undo                                           |
+| Ctrl+P                   | Open a file by name                            |
+| Ctrl+B                   | Show / hide the file explorer                  |
+| Ctrl+J                   | Show / hide the terminal                       |
+| Ctrl+/                   | Comment / uncomment                            |
+| F5                       | Build & run                                    |
+| F9 / F6 / F10            | Breakpoint / start debugging / next line       |
+| F12                      | Go to definition                               |
+| F2                       | Rename                                         |
+| Space (then wait)        | Menu with every other command                  |
+| Ctrl+Q                   | Quit                                           |
+
 ### VS Code style
 | Key                  | Action                                  |
 |----------------------|-----------------------------------------|

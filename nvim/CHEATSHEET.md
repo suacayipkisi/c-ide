@@ -1,5 +1,25 @@
 # C IDE cheat sheet            (close: <leader>q  |  leader = Space)
 
+## Start here: everyday keys
+Learn these first. Everything else below is reference.
+
+| Key                      | Action                                         |
+|--------------------------|------------------------------------------------|
+| i / Esc                  | Start typing / stop typing (back to commands)  |
+| Ctrl+S                   | Save (auto save is also on)                    |
+| Ctrl+C / Ctrl+X / Ctrl+V | Copy / cut / paste                             |
+| Ctrl+Z                   | Undo                                           |
+| Ctrl+P                   | Open a file by name                            |
+| Ctrl+B                   | Show / hide the file explorer                  |
+| Ctrl+J                   | Show / hide the terminal                       |
+| Ctrl+/                   | Comment / uncomment                            |
+| F5                       | Build & run                                    |
+| F9 / F6 / F10            | Breakpoint / start debugging / next line       |
+| F12                      | Go to definition                               |
+| F2                       | Rename                                         |
+| Space (then wait)        | Menu with every other command                  |
+| Ctrl+Q                   | Quit                                           |
+
 ## VS Code style
 | Key                  | Action                                  |
 |----------------------|-----------------------------------------|
