@@ -1,4 +1,4 @@
-# c-ide
+# c-ide [DEPRECEATED]
 
 A keyboard-first C IDE that runs in the terminal. It is built on Neovim and themed after VS Code's **Dark Modern**.
 It is meant to be driven entirely from the keyboard, though the mouse also works.
